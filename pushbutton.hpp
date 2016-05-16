@@ -8,7 +8,7 @@ enum ButtonStyle {UP, DOWN};
 class PushButton : public Widget {
 protected:
     ButtonStyle _stilus;
-    virtual void buttonClicked();
+    virtual void buttonClicked() = 0;
 
 public:
     inline PushButton(ButtonStyle stilus, int x, int y, int sx, int sy) : Widget(x,y,sx,sy), _stilus(stilus) {};
