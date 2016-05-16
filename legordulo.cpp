@@ -40,6 +40,7 @@ Legordulo::Legordulo( vector<string> valasztek,int x, int y, int sx, int sy)
 
     _down = new LegorduloButton(this, x+sx-sy, y, sy, sy);
     _showFrom = 0;
+    _text = nullptr;
 }
 
 void Legordulo::draw() const {
