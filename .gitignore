@@ -1,0 +1,5 @@
+/*.layout
+/bin/Debug/*.exe
+/obj/Debug
+/obj/Release
+/bin/Release
