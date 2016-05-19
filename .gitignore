@@ -2,3 +2,4 @@
 /data.txt
 /obj/Debug
 /*.layout
+/bin/Debug/*.exe

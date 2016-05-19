@@ -8,9 +8,10 @@
 class Window {
 private:
     int _sx, _sy;
+    bool _exit;
 protected:
     std::vector<Widget*> widgets;
-    virtual void saveToFile();
+    virtual void exit_event_loop();
 public:
     Window(int sx, int sy);
     void event_loop();

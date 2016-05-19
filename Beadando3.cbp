@@ -40,6 +40,7 @@
 			<Add library="lib/libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="amobaapplication.hpp" />
 		<Unit filename="clickButton.cpp" />
 		<Unit filename="clickButton.hpp" />
 		<Unit filename="examplecheckbox.cpp" />
@@ -47,8 +48,14 @@
 		<Unit filename="legordulo.cpp" />
 		<Unit filename="legordulo.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menuwindow.cpp" />
+		<Unit filename="menuwindow.hpp" />
+		<Unit filename="playwindow.cpp" />
+		<Unit filename="playwindow.hpp" />
 		<Unit filename="pushbutton.cpp" />
 		<Unit filename="pushbutton.hpp" />
+		<Unit filename="resultwindow.cpp" />
+		<Unit filename="resultwindow.hpp" />
 		<Unit filename="statictext.cpp" />
 		<Unit filename="statictext.hpp" />
 		<Unit filename="szambeallito.cpp" />

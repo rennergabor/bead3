@@ -4,7 +4,7 @@
 using namespace genv;
 
 void ClickButton::draw() const {
-    gout << move_to(_x, _y) << box(_size_x, _size_y);
+    gout << move_to(_x, _y) << color(150,150,150) << box(_size_x, _size_y);
     gout << move_to(_x+2, _y+2) << color(0,0,0) << box(_size_x-4, _size_y-4);
 
 }
