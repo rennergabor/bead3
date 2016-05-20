@@ -31,6 +31,9 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
 }
 
 void MenuWindow::textEditorChanged(ValueChangedEvent event){
+    if(event.eventType == ev_type_text){
+        cout << "new TextValue: " << event.newValueString << endl;
+    }
 }
 
 void MenuWindow::kilepesClicked() {

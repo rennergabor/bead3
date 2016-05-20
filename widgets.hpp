@@ -21,7 +21,7 @@ protected:
     function<void(ValueChangedEvent)> _valueChanged;
 public:
     Widget(int x, int y, int sx, int sy);
-    void addValueChangeListener(function<void(ValueChangedEvent)> listener){_valueChanged = listener;};
+    virtual void addValueChangeListener(function<void(ValueChangedEvent)> listener){_valueChanged = listener;};
     virtual bool is_selected(int mouse_x, int mouse_y) const;
     virtual void draw() const =0;
     virtual void handle(genv::event ev);

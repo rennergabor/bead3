@@ -22,16 +22,21 @@ void TextEditor::handle(event ev) {
             if (_size_x < 10+gout.twidth(_s) ) {
                 _s = _s.substr(0,_s.length()-1);
             }
+            textChanged();
         }
         if (ev.keycode == key_backspace) {
             _s = _s.substr(0,_s.length()-1);
+            textChanged();
         }
     }
 }
 
 void TextEditor::textChanged(){
-//    ValueChangedEvent *cev = new ValueChangedEvent();
-//
-//    // call listener
-//    _valueChanged(cev&);
+    string tmp_s = _s;
+    ValueChangedEvent cev = {ev_type_text, tmp_s, -1};
+
+    // call listener
+    if(_valueChanged != nullptr) {
+        _valueChanged(cev);
+    }
 }
