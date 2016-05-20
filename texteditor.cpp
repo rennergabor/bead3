@@ -28,3 +28,10 @@ void TextEditor::handle(event ev) {
         }
     }
 }
+
+void TextEditor::textChanged(){
+//    ValueChangedEvent *cev = new ValueChangedEvent();
+//
+//    // call listener
+//    _valueChanged(cev&);
+}

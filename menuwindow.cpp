@@ -23,10 +23,14 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     widgets.push_back(text2);
 
     TextEditor *ed = new TextEditor(160, 150, 90, 30, "érték");
+    ed->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
     widgets.push_back(ed);
 
     ClickButton *jatekGomb = new ClickButton([&]() { jatekClicked(); }, 290, 150, 30, 30);
     widgets.push_back(jatekGomb);
+}
+
+void MenuWindow::textEditorChanged(ValueChangedEvent event){
 }
 
 void MenuWindow::kilepesClicked() {

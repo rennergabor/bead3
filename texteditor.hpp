@@ -5,6 +5,8 @@
 
 class TextEditor : public Widget{
     std::string _s;
+protected:
+    void textChanged();
 public:
     TextEditor(int x, int y, int sx, int sy, std::string s);
     virtual bool focusable() const {return true;}
