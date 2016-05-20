@@ -3,3 +3,5 @@
 /obj/Debug
 /*.layout
 /bin/Debug/*.exe
+*.o
+/bin/Release/*.exe
