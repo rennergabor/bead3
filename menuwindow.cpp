@@ -5,6 +5,7 @@
 #include "statictext.hpp"
 #include "amobaapplication.hpp"
 #include "menuwindow.hpp"
+#include "texteditor.hpp"
 
 #include <vector>
 #include <iostream>
@@ -17,6 +18,12 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
 
     ClickButton *kilepesGomb = new ClickButton([&]() { kilepesClicked(); }, 10, 150, 30, 30);
     widgets.push_back(kilepesGomb);
+
+    StaticText *text2 = new StaticText(60, 150, 90, 30, "Valami:");
+    widgets.push_back(text2);
+
+    TextEditor *ed = new TextEditor(160, 150, 90, 30, "érték");
+    widgets.push_back(ed);
 
     ClickButton *jatekGomb = new ClickButton([&]() { jatekClicked(); }, 290, 150, 30, 30);
     widgets.push_back(jatekGomb);

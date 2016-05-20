@@ -8,9 +8,23 @@ void Window::exit_event_loop() {
 void Window::event_loop() {
     event ev;
     int focus = -1;
-    while(gin >> ev && !_exit) {
+    while(gin && !_exit) {
 
-        // focus change
+        // kirajzolas
+        torles();
+        for (size_t i=0; i<widgets.size(); i++) {
+            widgets[i]->draw();
+        }
+        // fokuszban levot rajzoljuk legfelulre!
+        if (focus!=-1) {
+            widgets[focus]->draw();
+        }
+        gout << refresh;
+
+        // wait for event
+        gin >> ev;
+
+        // handle focus change
         if (ev.type == ev_key && ev.keycode == key_tab) {
             if(focus!=-1) {
                 widgets[focus]->unfocus();
@@ -36,17 +50,6 @@ void Window::event_loop() {
         if (focus!=-1) {
             widgets[focus]->handle(ev);
         }
-
-        // kirajzolas
-        torles();
-        for (size_t i=0; i<widgets.size(); i++) {
-            widgets[i]->draw();
-        }
-        // fokuszban levot rajzoljuk legfelulre!
-        if (focus!=-1) {
-            widgets[focus]->draw();
-        }
-        gout << refresh;
     }
 }
 
