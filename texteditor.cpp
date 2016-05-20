@@ -36,7 +36,7 @@ void TextEditor::textChanged(){
     ValueChangedEvent cev = {ev_type_text, tmp_s, -1};
 
     // call listener
-    if(_valueChanged != nullptr) {
-        _valueChanged(cev);
+    if(_valueChangeFunction != nullptr) {
+        _valueChangeFunction(cev);
     }
 }

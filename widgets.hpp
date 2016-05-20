@@ -18,10 +18,10 @@ class Widget {
 protected:
     bool _focused;
     int _x, _y, _size_x, _size_y;
-    function<void(ValueChangedEvent)> _valueChanged;
+    function<void(ValueChangedEvent)> _valueChangeFunction;
 public:
     Widget(int x, int y, int sx, int sy);
-    virtual void addValueChangeListener(function<void(ValueChangedEvent)> listener){_valueChanged = listener;};
+    virtual void addValueChangeListener(function<void(ValueChangedEvent)> listener){_valueChangeFunction = listener;};
     virtual bool is_selected(int mouse_x, int mouse_y) const;
     virtual void draw() const =0;
     virtual void handle(genv::event ev);
