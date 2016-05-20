@@ -11,10 +11,10 @@ private:
     bool _exit;
 protected:
     std::vector<Widget*> widgets;
-    virtual void exit_event_loop();
 public:
     Window(int sx, int sy);
     void event_loop();
+    void exit_event_loop();
     void torles();
 };
 
