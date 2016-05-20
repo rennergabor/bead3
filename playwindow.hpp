@@ -12,6 +12,9 @@ protected:
     void tovabbClicked();
 public:
     PlayWindow(AmobaApplication &app, int x, int y);
+    int getActivePlayerId();
+    void changeActivePlayer();
+    void nyert();
 };
 
 

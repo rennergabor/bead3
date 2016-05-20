@@ -1,17 +1,23 @@
 #ifndef PALYA_HPP_INCLUDED
 #define PALYA_HPP_INCLUDED
 
-#include "graphics.hpp"
 #include "widgets.hpp"
+#include "playwindow.hpp"
+#include "jatekmester.hpp"
+#include <vector>
+
+using namespace std;
 
 class Palya : public Widget {
+private:
+    vector<Mezo*> _lepesek;
 protected:
-    bool _checked;
+    PlayWindow &_win;
+    JatekMester *_mester;
 public:
-    Palya(vector<vector<bool> > &tabla,int x, int y, int sx, int sy);
+    Palya(PlayWindow& win, int x, int y, int sx, int sy);
     virtual void draw() const ;
-    virtual void handle(genv::event ev);
-    virtual bool is_checked() const ;
+    virtual void handle(genv::event ev) ;
 };
 
 

@@ -11,11 +11,14 @@
 using namespace std;
 
 ResultWindow::ResultWindow(AmobaApplication &app, int x, int y) : Window (x, y), _app(app){
-    StaticText *amoba = new StaticText(170, 30, 100, 30, "Amöba");
+    StaticText *amoba = new StaticText(170, 50, 100, 30, "Amöba");
     widgets.push_back(amoba);
 
     StaticText *nyero1 = new StaticText(130, 120, 100, 30, "Gratulálok");
     widgets.push_back(nyero1);
+
+    StaticText *nyero3 = new StaticText(130, 140, 100, 30, _app.player1);
+    widgets.push_back(nyero3);
 
     StaticText *nyero2 = new StaticText(130, 160, 100, 30, "nyert!");
     widgets.push_back(nyero2);
