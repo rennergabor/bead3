@@ -5,6 +5,7 @@
 #include "statictext.hpp"
 #include "amobaapplication.hpp"
 #include "playwindow.hpp"
+
 #include <vector>
 #include <iostream>
 
@@ -37,6 +38,3 @@ void PlayWindow::tovabbClicked() {
     exit_event_loop();
     _app.changeState(EREDMENY);
 }
-
-
-

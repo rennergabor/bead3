@@ -6,7 +6,7 @@
 #include "texteditor.hpp"
 #include "amobaapplication.hpp"
 #include "menuwindow.hpp"
-#include "legordulo.hpp"
+#include "texteditor.hpp"
 
 #include <vector>
 #include <iostream>
@@ -26,6 +26,10 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     ClickButton *jatekGomb = new ClickButton([&]() { jatekClicked(); }, 260, 320, 100, 35);
     widgets.push_back(jatekGomb);
 
+    TextEditor *ed = new TextEditor(160, 150, 90, 30, "érték");
+    ed->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
+    widgets.push_back(ed);
+
     StaticText *play = new StaticText(290, 330, 40, 20, "PLAY");
     widgets.push_back(play);
 
@@ -41,12 +45,12 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     TextEditor *pirosJatekos = new TextEditor (260, 250, 100, 35, "");
     widgets.push_back(pirosJatekos);
 
-    StaticText *meret = new StaticText(130, 100, 100, 35, "Pálya mérete:");
-    widgets.push_back(meret);
+}
 
-    vector<string> v1 = {"40 x 40", "20 x 20" };
-    Legordulo *palyaMeret = new Legordulo (v1, 130, 120, 140, 35);
-    widgets.push_back(palyaMeret);
+void MenuWindow::textEditorChanged(ValueChangedEvent event){
+    if(event.eventType == ev_type_text){
+        cout << "new TextValue: " << event.newValueString << endl;
+    }
 }
 
 void MenuWindow::kilepesClicked() {

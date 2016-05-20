@@ -10,6 +10,7 @@ private:
 protected:
     void kilepesClicked();
     void jatekClicked();
+    void textEditorChanged(ValueChangedEvent event);
 
 public:
     MenuWindow(AmobaApplication &app, int x, int y);
