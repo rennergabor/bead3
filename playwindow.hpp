@@ -8,7 +8,8 @@ class PlayWindow : public Window {
 private:
     AmobaApplication &_app;
 protected:
-
+    void visszaClicked();
+    void tovabbClicked();
 public:
     PlayWindow(AmobaApplication &app, int x, int y);
 };

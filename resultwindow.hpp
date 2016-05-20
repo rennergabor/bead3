@@ -9,6 +9,7 @@ private:
     AmobaApplication &_app;
 protected:
     void kilepesClicked();
+    void jatekClicked();
 
 public:
     ResultWindow(AmobaApplication &app, int x, int y);

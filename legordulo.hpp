@@ -9,7 +9,7 @@
 
 using namespace std;
 
-enum Allapot { ALAP, LEGORDULT };
+enum Allapot1 { ALAP, LEGORDULT };
 
 const unsigned int SOROK_SZAMA = 3;
 class KivalaszthatoText;
@@ -21,7 +21,7 @@ private:
     vector<KivalaszthatoText*> _szovegek;
     int _sorokSzama,_sormagagassag;
 protected:
-    Allapot _allapot;
+    Allapot1 _allapot;
     int _kivalasztott;
     vector<string> _valasztek;
     void unfocus();
