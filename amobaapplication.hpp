@@ -15,7 +15,7 @@ public:
     string player1, player2;
     string players [2] = {player1, player2};
     int activePlayer;
-    inline int changeActivePlayer (int activePlayer){return 1 - activePlayer;};
+    inline void changeActivePlayer(){activePlayer = 1 - activePlayer;};
     int run();
     inline void changeState(Allapot a) {_allapot = a;};
 };
