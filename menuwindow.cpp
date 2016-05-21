@@ -14,7 +14,7 @@
 using namespace std;
 
 MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _app(app) {
-    StaticText *text = new StaticText(170, 30, 100,30, "Amöba");
+    StaticText *text = new StaticText(170, 50, 100,30, "Amöba");
     widgets.push_back(text);
 
     ClickButton *kilepesGomb = new ClickButton([&]() { kilepesClicked(); }, 40, 320, 100, 35);
@@ -26,29 +26,34 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     ClickButton *jatekGomb = new ClickButton([&]() { jatekClicked(); }, 260, 320, 100, 35);
     widgets.push_back(jatekGomb);
 
-    StaticText *kek = new StaticText(40, 230, 100, 35, "Kék játékos:");
+    StaticText *kek = new StaticText(40, 180, 100, 35, "Kék játékos:");
     widgets.push_back(kek);
 
-    TextEditor *ed1 = new TextEditor(40, 250, 100, 35, "érték");
-    ed1->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
-    widgets.push_back(ed1);
+    TextEditor *ed = new TextEditor(40, 200, 100, 35, _app.players[0]);
+    ed->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
+    widgets.push_back(ed);
 
     StaticText *play = new StaticText(290, 330, 40, 20, "PLAY");
     widgets.push_back(play);
 
-    StaticText *piros = new StaticText(260, 230, 100, 35, "Piros játékos:");
+    StaticText *piros = new StaticText(260, 180, 100, 35, "Piros játékos:");
     widgets.push_back(piros);
 
-    TextEditor *ed2 = new TextEditor(260, 250, 100, 35, "kukorica");
-  //  ed2->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
+    TextEditor *ed2 = new TextEditor(260, 200, 100, 35, _app.players[1]);
+    ed2->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged2(event); });
     widgets.push_back(ed2);
-
 
 }
 
 void MenuWindow::textEditorChanged(ValueChangedEvent event){
     if(event.eventType == ev_type_text){
-        cout << "new TextValue: " << event.newValueString << widgets.size() <<endl;
+        _app.players[0]=event.newValueString;
+    }
+}
+
+void MenuWindow::textEditorChanged2(ValueChangedEvent event){
+    if(event.eventType == ev_type_text){
+        _app.players[1]=event.newValueString;
     }
 }
 

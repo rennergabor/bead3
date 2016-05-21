@@ -9,15 +9,15 @@
 using namespace std;
 
 class Palya : public Widget {
-private:
-    vector<Mezo*> _lepesek;
 protected:
     PlayWindow &_win;
     JatekMester *_mester;
 public:
     Palya(PlayWindow& win, int x, int y, int sx, int sy);
     virtual void draw() const ;
-    virtual void handle(genv::event ev) ;
+    virtual void handle(genv::event ev);
+    virtual bool focusable() const {return true;};
+
 };
 
 

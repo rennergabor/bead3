@@ -1,7 +1,6 @@
-/*.depend
-/data.txt
-/obj/Debug
 /*.layout
 /bin/Debug/*.exe
-*.o
-/bin/Release/*.exe
+/obj/Debug
+/obj/Release
+/bin/Release
+/*.depend

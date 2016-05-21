@@ -11,7 +11,7 @@ int AmobaApplication::run() {
             w->event_loop();
         }
         if (_allapot == JATEK) {
-            PlayWindow *w = new PlayWindow(*this, 500, 500);
+            PlayWindow *w = new PlayWindow(*this, 600, 600);
             w->event_loop();
         }
         if (_allapot == EREDMENY) {

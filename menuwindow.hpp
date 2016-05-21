@@ -11,6 +11,7 @@ protected:
     void kilepesClicked();
     void jatekClicked();
     void textEditorChanged(ValueChangedEvent event);
+    void textEditorChanged2(ValueChangedEvent event);
 
 public:
     MenuWindow(AmobaApplication &app, int x, int y);
