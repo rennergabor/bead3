@@ -17,7 +17,7 @@ ResultWindow::ResultWindow(AmobaApplication &app, int x, int y) : Window (x, y),
     StaticText *nyero1 = new StaticText(130, 120, 100, 30, "Gratulálok");
     widgets.push_back(nyero1);
 
-    StaticText *nyero3 = new StaticText(130, 140, 100, 30, _app.player1);
+    StaticText *nyero3 = new StaticText(130, 140, 100, 30, _app.players[_app.activePlayer]);
     widgets.push_back(nyero3);
 
     StaticText *nyero2 = new StaticText(130, 160, 100, 30, "nyert!");

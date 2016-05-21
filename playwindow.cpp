@@ -14,16 +14,16 @@ using namespace std;
 
 PlayWindow::PlayWindow(AmobaApplication &app, int x, int y) : Window (x, y), _app(app) {
 
-    StaticText *text = new StaticText(170, 30, 100, 30, "Amöba");
-    widgets.push_back(text);
+    _player = new StaticText(170, 10, 100, 30, _app.players[_app.activePlayer]);
+    widgets.push_back(_player);
 
-    ClickButton *visszaGomb = new ClickButton([&]() {visszaClicked();}, 40, 30, 100, 35);
+    ClickButton *visszaGomb = new ClickButton([&]() {visszaClicked();}, 40, 10, 100, 35);
     widgets.push_back(visszaGomb);
 
-    StaticText *exit = new StaticText(65, 40, 40, 20, "VISSZA");
+    StaticText *exit = new StaticText(65, 20, 40, 20, "VISSZA");
     widgets.push_back(exit);
 
-    Palya *palya = new Palya(*this, 0, 50, x-10, y-60);
+    Palya *palya = new Palya(*this, 0, 50, x-10, x-10);
     widgets.push_back(palya);
 
 }
@@ -36,6 +36,7 @@ void PlayWindow::visszaClicked() {
 
 void PlayWindow::changeActivePlayer() {
     _app.changeActivePlayer();
+    _player->setText(_app.players[_app.activePlayer]);
 }
 
 int PlayWindow::getActivePlayerId(){

@@ -29,7 +29,7 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     StaticText *kek = new StaticText(40, 180, 100, 35, "Kék játékos:");
     widgets.push_back(kek);
 
-    TextEditor *ed = new TextEditor(40, 200, 100, 35, "nev");
+    TextEditor *ed = new TextEditor(40, 200, 100, 35, _app.players[0]);
     ed->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged(event); });
     widgets.push_back(ed);
 
@@ -39,7 +39,7 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
     StaticText *piros = new StaticText(260, 180, 100, 35, "Piros játékos:");
     widgets.push_back(piros);
 
-    TextEditor *ed2 = new TextEditor(260, 200, 100, 35, "nev");
+    TextEditor *ed2 = new TextEditor(260, 200, 100, 35, _app.players[1]);
     ed2->addValueChangeListener([&](ValueChangedEvent event) { textEditorChanged2(event); });
     widgets.push_back(ed2);
 
@@ -47,15 +47,13 @@ MenuWindow::MenuWindow(AmobaApplication &app, int x, int y) : Window (x, y), _ap
 
 void MenuWindow::textEditorChanged(ValueChangedEvent event){
     if(event.eventType == ev_type_text){
-        _app.player1=event.newValueString;
-        cout << "new TextValue: " << event.newValueString << endl;
+        _app.players[0]=event.newValueString;
     }
 }
 
 void MenuWindow::textEditorChanged2(ValueChangedEvent event){
     if(event.eventType == ev_type_text){
-        _app.player2=event.newValueString;
-        cout << "new: " << event.newValueString << endl;
+        _app.players[1]=event.newValueString;
     }
 }
 

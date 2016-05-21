@@ -12,9 +12,8 @@ private:
     Allapot _allapot = Allapot::MENU;
 
 public:
-    string player1, player2;
-    string players [2] = {player1, player2};
-    int activePlayer;
+    string players [2] = {"Kékeske" , "Piroska"};
+    int activePlayer = 0;
     inline void changeActivePlayer(){activePlayer = 1 - activePlayer;};
     int run();
     inline void changeState(Allapot a) {_allapot = a;};
