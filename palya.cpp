@@ -12,7 +12,7 @@ using namespace genv;
 const int palya_meret = 40;
 
 Palya::Palya(PlayWindow& win, int x, int y, int sx, int sy) : Widget(x, y, sx, sy), _win(win) {
-    _mester = new JatekMester();
+    _mester = new JatekMester(palya_meret);
 }
 
 void Palya::handle(event ev) {
